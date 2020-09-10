@@ -1,4 +1,7 @@
 <?php
+error_reporting(-1);
+
+use vendor\core\Router;
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');  // Получаем строку запроса
 
@@ -7,14 +10,11 @@ define('ROOT', dirname(__DIR__));
 define('CORE', ROOT . '/vendor/core');
 define('APP', ROOT . '/app');
 
-require_once '../vendor/core/Router.php';
 require_once '../vendor/libs/functions.php';
-//require_once '../app/controllers/Main.php';
-//require_once '../app/controllers/Posts.php';
-//require_once '../app/controllers/PostsNew.php';
+debug($_GET);
 
 spl_autoload_register(function($class){
-    $file = APP . "/controllers/$class.php";
+    $file = ROOT . '/' . str_replace('\\', '/', $class) . '.php';
     if(is_file($file)){
         require_once $file;
     }
@@ -23,16 +23,14 @@ spl_autoload_register(function($class){
 );
 
 
-Router::add('^pages/?(?P<action>[a-z-]+)?$', ['controller' => 'Posts']); // Наше особое правило должно быть раньше
+Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']); // Наше особое правило должно быть раньше
+Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
 
 // default routes
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']); // 1-е правило
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 
 debug(Router::getRoutes());
-
-
-
 
 Router::dispatch($query);
 
