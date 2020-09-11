@@ -9,9 +9,9 @@ define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
 define('CORE', ROOT . '/vendor/core');
 define('APP', ROOT . '/app');
+define('LAYOUT', 'default');
 
 require_once '../vendor/libs/functions.php';
-debug($_GET);
 
 spl_autoload_register(function($class){
     $file = ROOT . '/' . str_replace('\\', '/', $class) . '.php';
@@ -29,8 +29,6 @@ Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'v
 // default routes
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']); // 1-е правило
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
-
-debug(Router::getRoutes());
 
 Router::dispatch($query);
 
