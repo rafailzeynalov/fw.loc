@@ -34,20 +34,20 @@ class Db
      * например создать таблицу в БД, когда интересует
      * выполнился ли запрос (true), или нет (false)
      */
-    public function execute($sql){
+    public function execute($sql, $params = []){
         self::$countSql++; // При каждом вызове ++
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute();
+        return $stmt->execute($params);
     }
 
     /**
      * это, когда нужно получить данные из запроса
      */
-    public function query($sql){
+    public function query($sql, $params = []){
         self::$countSql++;
         self::$queries[] = $sql; // При каждом запросе запоминается Sql
         $stmt = $this->pdo->prepare($sql);
-        $res = $stmt->execute();
+        $res = $stmt->execute($params);
         if($res !== false) {
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
