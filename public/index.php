@@ -7,6 +7,7 @@ $query = rtrim($_SERVER['QUERY_STRING'], '/');  // Получаем строку
 
 define('WWW', __DIR__);
 define('ROOT', dirname(__DIR__));
+define('LIBS', ROOT . '/vendor/libs');
 define('CORE', ROOT . '/vendor/core');
 define('APP', ROOT . '/app');
 define('LAYOUT', 'default');
