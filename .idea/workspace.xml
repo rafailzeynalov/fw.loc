@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da10b439-a8ae-4488-b71e-a128c135637b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/core/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/core/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/core/base/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/core/base/Model.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -57,7 +54,7 @@
       <workItem from="1599805342458" duration="18152000" />
       <workItem from="1600060568013" duration="11856000" />
       <workItem from="1600671755737" duration="15212000" />
-      <workItem from="1600759694554" duration="4596000" />
+      <workItem from="1600759694554" duration="14190000" />
     </task>
     <servers />
   </component>
