@@ -3,8 +3,8 @@
 $config = [
     'components' => [
         'cache' => 'vendor\libs\Cache',
-        'test' => 'vendors\libs\T est'
+        'test' => 'vendor\libs\Test'
     ],
 ];
 
-return $congig;
+return $config;
